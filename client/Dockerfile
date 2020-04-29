@@ -1,6 +1,6 @@
 FROM node
 
-RUN npm install -g ws 
+RUN npm install -g node-static 
 
 COPY . /app
 
