@@ -1,60 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
 
-    <title>Learning WebRTC - Chapter 5: Connecting Clients Together</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning WebRTC - Chapter 5: Connecting Clients Together</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
 
-    <style>
-      body {
-        background-color: #3D6DF2;
-        margin-top: 15px;
-        font-family: sans-serif;
-        color: white;
-      }
+<body>
+  <div id="login-page" class="container" style="margin-top: 30px;">
+    <h2 class="subtitle">Login As ...</h2>
+    <input type="text" id="username" class="input is-primary" />
+    <button id="login" class="button is-primary" style="margin-top: 10px;">Login</button>
+  </div>
 
-      video {
-        background: black;
-        border: 1px solid gray;
-      }
-
-      .page {
-        position: relative;
-        display: block;
-        margin: 0 auto;
-        width: 500px;
-        height: 500px;
-      }
-
-      #yours {
-        width: 150px;
-        height: 150px;
-        position: absolute;
-        top: 15px;
-        right: 15px;
-      }
-
-      #theirs {
-        width: 500px;
-        height: 500px;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="login-page" class="page">
-      <h2>Login As</h2>
-      <input type="text" id="username" />
-      <button id="login">Login</button>
-    </div>
-
-    <div id="call-page" class="page">
-      <video id="yours" autoplay></video>
+  <div id="call-page" class="container">
+    <div class="card">
       <video id="theirs" autoplay></video>
-      <input type="text" id="their-username" />
-      <button id="call">Call</button>
-      <button id="hang-up">Hang Up</button>
+      <video id="yours" autoplay></video>
+    </div>
+    <div class="container" style="margin-top: 10px; margin-bottom: 10px;">
+
+      <div class="field has-addons">
+        <div class="control">
+          <input id="their-username" class="input is-success" type="text">
+        </div>
+        <div class="control">
+          <button id="call" class="button is-success">Call</button>
+        </div>
+        <div class="control">
+          <button id="hang-up" class="button is-danger">Hang Up</button>
+        </div>
+      </div>
     </div>
 
-    <script src="main.js"></script>
-  </body>
+    <div class="container">
+      <div id="received" class="textarea"></div>
+      <div class="field has-addons">
+        <div class="control">
+          <input type="text" id="message" class="input is-info" style="margin-top: 10px;"></input>
+        </div>
+        <div class="control">
+          <button id="send" class="button is-info" style="margin-top: 10px;">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
 </html>
