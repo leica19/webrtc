@@ -71,10 +71,15 @@ wss.on('connection', function (connection) {
 
         break;
       case "leave":
+        if (data.name == undefined) {
+          console.log("connection is already ended");
+          break;
+        }
         console.log("Disconnecting user from", data.name);
         var conn = users[data.name];
-        conn.otherName = null;
-
+        if (conn) {
+          conn.otherName = null;
+        } 
         if (conn != null) {
           sendTo(conn, {
             type: "leave"
