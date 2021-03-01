@@ -105,6 +105,7 @@ function startConnection() {
   } else {
     alert("Sorry, your browser does not support WebRTC.");
   }
+  console.log("startConnection OK")
 }
 
 function setupPeerConnection(stream) {
